@@ -83,6 +83,7 @@ This project is licensed under the [MIT License](LICENSE).
 - [PIL](https://python-pillow.org)
 - [Docker](https://www.docker.com/)
 - [Docker model image](https://hub.docker.com/layers/neevaiti/asl-detect-app/v1.0/images/sha256:af56ccc197ca07b38cb7fe7c6da8b7fd82a513718f887896d2800dec61f5c4cf)
+- [Dataset](https://universe.roboflow.com/gerdus-kemp/american-sign-language-letters-rarfr)
 
 ## Authors
 
