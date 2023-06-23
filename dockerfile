@@ -1,17 +1,20 @@
-FROM python:3.9
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
 
-# Define the working directory
+# Set the working directory in the container
 WORKDIR /app
-COPY . /app
 
-# Running commands
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx
+# Copy requirements.txt to the docker container
+COPY requirements.txt /app
 
-# Define the port to expose
-EXPOSE 8501
+RUN apt-get update && \
+    apt-get install -y libsm6 libxext6 libxrender-dev libgl1-mesa-glx gcc libglib2.0-0
 
-# Execute the streamlit
-CMD ["streamlit", "run", "main.py"]
+# Install python dependencies
+RUN pip install -r requirements.txt 
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Run the streamlit command when the container launches
+CMD ["streamlit", "run", "main.py", "--server.port=80", "--server.address=0.0.0.0"]

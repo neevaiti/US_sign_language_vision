@@ -36,7 +36,7 @@ class VideoTransformer(VideoTransformerBase):
 
         # Run the model
         try:
-            preds = self.model.predict(source=img, conf=0.4, iou=0.3, save=False)
+            preds = self.model(source=img, conf=0.4, iou=0.4, save=False)
         except:
             preds = []
 
