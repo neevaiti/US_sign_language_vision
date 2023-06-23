@@ -7,6 +7,8 @@ COPY . /app
 # Running commands
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx
 
 # Define the port to expose
 EXPOSE 8501
