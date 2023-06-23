@@ -106,7 +106,7 @@ def app():
     option = st.sidebar.radio("Sélectionnez une option", ("Image", "Camera"))
     
     if option == "Image":
-        st.header("Détection des lettres par image")
+        st.header("Détection des lettres par image.")
         uploaded_file = st.file_uploader("Upload une image", type=['png', 'jpg', 'jpeg'])
         if uploaded_file is not None:
             try:
